@@ -64,7 +64,7 @@ influxdb2:
 |weatherKit - `longitude` and `latitude `|Coordinates of forecast location (in decimal degrees).<br><br>**Type:** `float`<br>**Possible values:** `latitude: 47.20296790272209` and `longitude:-123.41670367098749` |
 |influxdb2 - `url`|URL for your influxdb <br><br>**Type:** `string`<br>**Possible values:** `http://localhost:8086` , `http://192.168.188.2:8086` |
 |influxdb2 - `bucket`|Name of your bucket the forecast data is stored. <br><br>**Type:** `string`<br>**Possible values:** `weather` , `forecast`|
-|influxdb2 - `org`|Org name of yoru infuxdb|
+|influxdb2 - `org`|Org name of yoru influxdb|
 |influxdb2 - `token`|Token with writing privileges on the database|
 
 
