@@ -83,9 +83,9 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "Temperatur",
+              "alias": "Temperature",
               "fill": 0,
-              "fillBelowTo": "gefühlte Temperatur",
+              "fillBelowTo": "Apparent Temperature",
               "zindex": 2
             },
             {
@@ -96,7 +96,7 @@
               "zindex": 2
             },
             {
-              "alias": "Sonne",
+              "alias": "Sun",
               "bars": true,
               "legend": false,
               "lines": false,
@@ -106,7 +106,7 @@
               "zindex": -2
             },
             {
-              "alias": "Bewölkung",
+              "alias": "Cloud cover",
               "bars": true,
               "lines": false,
               "stack": true,
@@ -115,7 +115,7 @@
               "zindex": -2
             },
             {
-              "alias": "Regen",
+              "alias": "Rain",
               "bars": true,
               "lines": false,
               "stack": true,
@@ -124,14 +124,14 @@
               "zindex": -1
             },
             {
-              "alias": "Tag",
+              "alias": "Day",
               "fill": 3,
               "linewidth": 0,
               "yaxis": 2,
               "zindex": -3
             },
             {
-              "alias": "Nacht",
+              "alias": "Night",
               "fill": 5,
               "linewidth": 0,
               "yaxis": 2,
@@ -143,7 +143,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "alias": "gefühlte Temperatur",
+              "alias": "Apparent Temperature",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -181,7 +181,7 @@
               "tags": []
             },
             {
-              "alias": "Temperatur",
+              "alias": "Temperature",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -257,7 +257,7 @@
               "tags": []
             },
             {
-              "alias": "Regenwahrscheinlichkeit",
+              "alias": "Precipitation probability",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -295,7 +295,7 @@
               "tags": []
             },
             {
-              "alias": "Regen",
+              "alias": "Precipitation",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -333,7 +333,7 @@
               "tags": []
             },
             {
-              "alias": "Feuchtigkeit",
+              "alias": "Humidity",
               "dsType": "influxdb",
               "groupBy": [
                 {
@@ -371,7 +371,7 @@
               "tags": []
             },
             {
-              "alias": "Sonne",
+              "alias": "Sun",
               "dsType": "influxdb",
               "groupBy": [
                 {

@@ -1,22 +1,20 @@
 {
-  "name": "darksky2influxdb",
+  "name": "weatherkit2influxdb2",
   "version": "1.0.0",
-  "description": "Stores weather forcecast data from darkskyapi into a influxdb database",
+  "description": "Stores weather forcecast data from Apple WeatherKit into an influxdb2 bucket",
   "main": "importForecast.js",
   "dependencies": {
+    "@influxdata/influxdb-client": "^1.35.0",
     "config": "^1.25.1",
-    "influx": "^5.0.7",
     "js-yaml": "^3.8.3",
-    "darksky-node": "^0.0.2",
     "node-cron": "^1.1.3"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "node importForecast.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SvenSommer/darksky2influxdb.git"
+    "url": "git+https://github.com/joehoper/weatherkit2influxdb2.git"
   },
   "keywords": [
     "darkskyapi",
@@ -24,10 +22,10 @@
     "weather",
     "forecast"
   ],
-  "author": "SvenSommer",
+  "author": "Joe Hoper",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SvenSommer/darksky2influxdb/issues"
+    "url": "https://github.com/joehoper/weatherkit2influxdb2/issues"
   },
-  "homepage": "https://github.com/SvenSommer/darksky2influxdb#readme"
+  "homepage": "https://github.com/joehoper/weatherkit2influxdb2#readme"
 }

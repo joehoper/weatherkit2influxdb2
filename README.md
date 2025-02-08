@@ -1,4 +1,4 @@
-# darksky2influxdb
+# weatherkit2influxdb2
 Stores weather forcecast data from Dark Sky Api into a influxdb database.
 <br>[Powered by Dark Sky](https://darksky.net/poweredby/)
 
@@ -13,7 +13,7 @@ This information can by used to display forecast data with [grafana](https://gra
 
 ## Getting Started
 
-Clone repository `git clone https://github.com/SvenSommer/darksky2influxdb`
+Clone repository `git clone https://github.com/joehoper/weatherkit2influxdb2`
 
 ### Prerequisites
 
@@ -39,7 +39,7 @@ If you want to visualise the data in a chart I can hardly reccomend [grafana](ht
 
 ### Installing
 
-1. Enter cloned directory: `cd darksky2influxdb` and install dependencies `npm install`
+1. Enter cloned directory: `cd weatherkit2influxdb2` and install dependencies `npm install`
 2. Configure config/default.yml file
 
 Here is an example of `default.yml`
@@ -47,16 +47,15 @@ Here is an example of `default.yml`
 general:
   debug: true
   cron: '*/15 * * * *'
-darksky:
-  key: abcdefghiklmnopqrstuvwxyz1234567
-  units: auto
+weatherKit:
+  token: apple_jwt_token
   longitude: -123.41670367098749
   latitude: 47.20296790272209
-influxdb:
+influxdb2:
   host: 192.168.188.2
-  database: weather
-  username: darkskyimport_user
-  password: supersecretpassword!?
+  bucket: weatherkit
+  org: influx_org
+  token: access_token
 ```
 
 |Option|Description|
@@ -79,7 +78,7 @@ Start the import with `node importForecast.js` If you have given a valid cron in
 
 ## Tested
 
-This is coded and tested on a RaspberryPi 3
+This is coded on a PC and tested on a RaspberryPi 4
 
 ## Authors
 
