@@ -25,19 +25,13 @@ const influxDb2 = new Influx.InfluxDB({
     token: influxConfig.token
 })
 
-const writeApi = influxDb2.getWriteApi(influxConfig.org, influxConfig.bucket);
-
-writeApi.useDefaultTags({
-    source: 'Apple WeatherKit'
-});
-
 const weatherKit = new WeatherKitApi(weatherKitConfig.token);
 
 var getForecast = function () {
     weatherKit.forecast(weatherKitConfig.latitude, weatherKitConfig.longitude,
         function (err, responseBody) {
             if (err)
-                console.error('Error while requesting darksky forecast', err);
+                console.error('Error while requesting Apple WeatherKit forecast', err);
             
             else {
                 var forecast = JSON.parse(responseBody);
@@ -49,6 +43,12 @@ var getForecast = function () {
                     console.dir(hourly);
 
                 console.log(`Writing ${hourly.hours.length} Datapoints to InfluxDB2 in bucket "${influxConfig.bucket}" with measurement "forecast" at ${influxConfig.url}`);
+
+                var writeApi = influxDb2.getWriteApi(influxConfig.org, influxConfig.bucket);
+
+                writeApi.useDefaultTags({
+                    source: 'Apple WeatherKit'
+                });
 
                 for (var i = 0; i < hourly.hours.length; i++) {
                     var fc = hourly.hours[i];
@@ -102,7 +102,7 @@ var getForecast = function () {
                 writeApi.close().catch(err => {
                     console.error('Error writing to InfluxDB', err)
                 }).then(() => {
-                    console.log('Supposedly we have finished.');
+                    console.log('Data points written and flushed.');
                 });
             }
     })
@@ -113,9 +113,9 @@ if (generalConfig.cron) {
         getForecast();
     });
 
-    console.log(`DarkSky data will be written to InfluxDB on cron interval '${generalConfig.cron}'`);
+    console.log(`Apple WeatherKit data will be written to InfluxDB on cron interval '${generalConfig.cron}'`);
 } else {
     getForecast();
 
-    console.log('DarkSky data is written to InfluxDB');
+    console.log('Apple WeatherKit data is written to InfluxDB');
 }
